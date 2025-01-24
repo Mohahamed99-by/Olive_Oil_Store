@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "زيت زيتون بكر ممتاز",
+      "description": "زيت زيتون مُعصر على البارد، مباشرة من بستاننا العائلي في فلسطين.",
+      "price": 99.99,
+      "image": "https://www.aljazeera.net/wp-content/uploads/2022/03/shutterstock_452895481.jpg?resize=730%2C410&quality=80",
+      "features": ["عضوي 100٪", "عصرة أولى باردة", "حموضة منخفضة"]
+    },
+    {
+      "id": 2,
+      "name": "زيت زيتون بالثوم",
+      "description": "زيت زيتون غني بنكهة الثوم الطازج، مثالي للطبخ والتتبيل.",
+      "price": 79.99,
+      "image": "https://cdn.salla.sa/qQzbY/b0f4b045-530f-46ec-9299-1562e53d84b8-1000x750-ojvoXFfTM4Bf9IjFH3eqUIvalVkVZkovIrjlZcRT.jpg",
+      "features": ["صناعة يدوية", "بدون نكهات صناعية", "إنتاج محدود"]
+    },
+    {
+      "id": 3,
+      "name": "زيت زيتون متوسطي",
+      "description": "مزيج متقن من زيوت الزيتون من فلسطين والأردن.",
+      "price": 119.99,
+      "image": "https://mf.b37mrtl.ru/media/pics/2023.08/original/64ca30604236041c2f204624.jpg",
+      "features": ["مزيج متعدد المناطق", "نكهة غنية", "جودة فائقة"]
+    }
+  ]
+  
