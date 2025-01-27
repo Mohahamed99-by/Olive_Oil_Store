@@ -1,81 +1,50 @@
-import React from "react";
-import { FaLeaf, FaHandHoldingHeart, FaGlobe, FaTruck } from "react-icons/fa";
-
 const About = () => {
   return (
-    <section className="bg-gradient-to-br from-green-50 to-green-100 py-8 md:py-16" dir="rtl">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-8 md:mb-12 text-center">
-            قصة متجر زيت الزيتون
-          </h2>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="text-center mb-12">
+        <h1 className="text-3xl font-bold mb-4">من نحن</h1>
+        <p className="text-xl text-gray-600">تعرف على قصتنا وقيمنا</p>
+      </div>
 
-          <div className="bg-white shadow-2xl rounded-2xl overflow-hidden">
-            {/* Story Section */}
-            <div className="p-4 md:p-8 border-b border-green-100">
-              <div className="flex items-center mb-4 md:mb-6">
-                <FaLeaf className="text-2xl md:text-3xl text-green-700 ml-3 md:ml-4" />
-                <h3 className="text-xl md:text-2xl font-semibold text-green-800">
-                  رحلتنا
-                </h3>
-              </div>
-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                بدأت رحلتنا في عام 2010 من مزرعة صغيرة في قلب أراضي الزيتون. هدفنا كان بسيطًا ولكنه طموح: تقديم زيت زيتون عالي الجودة يعكس أصالة وتراث أرضنا. نحن نؤمن بأن كل قطرة من زيتنا تحمل قصة عراقة وتميز.
-              </p>
-            </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">قصتنا</h2>
+          <p className="text-gray-600 leading-relaxed">
+            نحن تعاونية مغربية متخصصة في إنتاج وتسويق المنتجات الطبيعية عالية الجودة. 
+            نعمل مع المزارعين المحليين والحرفيين التقليديين لتقديم أفضل المنتجات الطبيعية 
+            من مختلف مناطق المغرب.
+          </p>
+        </div>
 
-            {/* Values Section */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 p-4 md:p-8">
-              <div className="flex items-start space-x-3 md:space-x-4 rtl:space-x-reverse">
-                <FaHandHoldingHeart className="text-2xl md:text-3xl text-green-700 mt-1 md:mt-2" />
-                <div>
-                  <h4 className="text-lg md:text-xl font-semibold text-green-800 mb-2">
-                    الجودة أولاً
-                  </h4>
-                  <p className="text-sm md:text-base text-gray-700">
-                    نلتزم بمعايير صارمة في اختيار وإنتاج زيت الزيتون، مع الحفاظ على الجودة الطبيعية والمذاق الأصيل.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 md:space-x-4 rtl:space-x-reverse">
-                <FaGlobe className="text-2xl md:text-3xl text-green-700 mt-1 md:mt-2" />
-                <div>
-                  <h4 className="text-lg md:text-xl font-semibold text-green-800 mb-2">
-                    الاستدامة
-                  </h4>
-                  <p className="text-sm md:text-base text-gray-700">
-                    نعمل بشكل مستمر على حماية البيئة وتعزيز الممارسات الزراعية المستدامة في مزارعنا.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 md:space-x-4 rtl:space-x-reverse">
-                <FaTruck className="text-2xl md:text-3xl text-green-700 mt-1 md:mt-2" />
-                <div>
-                  <h4 className="text-lg md:text-xl font-semibold text-green-800 mb-2">
-                    التوصيل
-                  </h4>
-                  <p className="text-sm md:text-base text-gray-700">
-                    نوصل منتجاتنا بعناية فائقة لضمان وصولها إليك طازجة وبأعلى جودة ممكنة.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 md:space-x-4 rtl:space-x-reverse">
-                <FaHandHoldingHeart className="text-2xl md:text-3xl text-green-700 mt-1 md:mt-2" />
-                <div>
-                  <h4 className="text-lg md:text-xl font-semibold text-green-800 mb-2">
-                    خدمة العملاء
-                  </h4>
-                  <p className="text-sm md:text-base text-gray-700">
-                    نضع رضا عملائنا في أولوياتنا ونسعى دائمًا لتقديم تجربة تسوق مميزة.
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">مهمتنا</h2>
+          <p className="text-gray-600 leading-relaxed">
+            نسعى إلى الحفاظ على التقاليد المغربية العريقة في إنتاج المنتجات الطبيعية، 
+            مع الالتزام بأعلى معايير الجودة والاستدامة. هدفنا هو تقديم منتجات طبيعية 
+            خالصة لعملائنا مع دعم المجتمعات المحلية.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <h2 className="text-2xl font-semibold mb-4 text-center">قيمنا</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center p-6 bg-green-50 rounded-lg">
+            <h3 className="text-xl font-semibold mb-2">الجودة</h3>
+            <p className="text-gray-600">نلتزم بتقديم أعلى معايير الجودة في جميع منتجاتنا</p>
+          </div>
+          <div className="text-center p-6 bg-green-50 rounded-lg">
+            <h3 className="text-xl font-semibold mb-2">الاستدامة</h3>
+            <p className="text-gray-600">نحرص على اتباع ممارسات مستدامة في جميع مراحل الإنتاج</p>
+          </div>
+          <div className="text-center p-6 bg-green-50 rounded-lg">
+            <h3 className="text-xl font-semibold mb-2">الشفافية</h3>
+            <p className="text-gray-600">نؤمن بالشفافية الكاملة في عملياتنا وعلاقاتنا مع العملاء</p>
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  )
+}
 
-export default About;
+export default About
