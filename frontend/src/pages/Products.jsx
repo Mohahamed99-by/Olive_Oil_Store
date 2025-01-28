@@ -218,34 +218,46 @@ const Products = () => {
     : allProducts.filter(product => product.categoryId === selectedCategory)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="min-h-screen bg-gradient-to-br from-green-50/50 to-emerald-50/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        {/* Page Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-8 sm:mb-12"
+        >
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-900 mb-2 sm:mb-4 font-arabic">منتجاتنا المميزة</h1>
+          <p className="text-sm sm:text-base lg:text-lg text-green-700/80 max-w-2xl mx-auto font-arabic">
+            اكتشف مجموعتنا المختارة من المنتجات الطبيعية المغربية عالية الجودة
+          </p>
+        </motion.div>
+
         {/* Categories Navigation */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12 lg:mb-16">
           {/* Category Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-10">
             {categories.map((category) => (
               <motion.div
                 key={category.id}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleCategoryChange(category.id)}
-                className={`relative overflow-hidden rounded-2xl cursor-pointer group ${
-                  selectedCategory === category.id ? 'ring-2 ring-green-800' : ''
+                className={`relative overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer group shadow-md hover:shadow-xl transition-shadow duration-300 ${
+                  selectedCategory === category.id ? 'ring-2 ring-green-600' : ''
                 }`}
               >
                 <div className="aspect-[16/9]">
                   <img
                     src={category.categorieImage}
                     alt={category.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20" />
-                  <div className="absolute inset-0 p-4 flex flex-col justify-end">
-                    <h3 className="text-white text-lg sm:text-xl font-semibold mb-1 font-arabic">
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/90 via-green-900/50 to-transparent" />
+                  <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-1 sm:mb-2 font-arabic text-white">
                       {category.name}
                     </h3>
-                    <p className="text-white/80 text-sm line-clamp-2 font-arabic">
+                    <p className="text-xs sm:text-sm lg:text-base text-white/90 line-clamp-2 font-arabic">
                       {category.description}
                     </p>
                   </div>
@@ -264,10 +276,10 @@ const Products = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleCategoryChange('all')}
-              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap font-arabic
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap font-arabic
                 ${selectedCategory === 'all'
                   ? 'bg-green-800 text-white shadow-lg'
-                  : 'bg-white text-green-800 hover:bg-green-800 hover:text-white'}`}
+                  : 'bg-white text-green-800 hover:bg-green-50 border border-green-200'}`}
             >
               جميع المنتجات
             </motion.button>
@@ -277,10 +289,10 @@ const Products = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleCategoryChange(category.id)}
-                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap font-arabic
+                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap font-arabic
                   ${selectedCategory === category.id
                     ? 'bg-green-800 text-white shadow-lg'
-                    : 'bg-white text-green-800 hover:bg-green-800 hover:text-white'}`}
+                    : 'bg-white text-green-800 hover:bg-green-50 border border-green-200'}`}
               >
                 {category.name}
               </motion.button>
@@ -301,33 +313,34 @@ const Products = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
               >
-                <div className="relative aspect-square">
+                <div className="relative aspect-square overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4 right-4 flex gap-2">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-2">
                       <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={() => setQuickViewProduct(product)}
-                        className="flex-1 bg-white/90 backdrop-blur-sm py-3 rounded-xl flex items-center justify-center gap-2 text-green-800 font-arabic"
+                        className="flex-1 bg-white/95 backdrop-blur-sm py-2 sm:py-3 rounded-lg sm:rounded-xl flex items-center justify-center gap-1 sm:gap-2 text-green-800 font-semibold font-arabic shadow-lg"
                       >
-                        <Eye size={18} />
-                        <span>عرض سريع</span>
+                        <Eye size={16} className="sm:w-[18px] sm:h-[18px]" />
+                        <span className="text-xs sm:text-sm">عرض سريع</span>
                       </motion.button>
                       <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={() => toggleFavorite(product.id)}
-                        className="p-3 bg-white/90 backdrop-blur-sm rounded-xl text-green-800"
+                        className="p-2 sm:p-3 bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl text-green-800 shadow-lg"
                       >
                         <Heart
-                          size={18}
+                          size={16}
+                          className="sm:w-[18px] sm:h-[18px] transition-colors duration-300"
                           fill={favorites.includes(product.id) ? "currentColor" : "none"}
                         />
                       </motion.button>
@@ -335,19 +348,19 @@ const Products = () => {
                   </div>
                 </div>
                 <div className="p-4 sm:p-6">
-                  <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-green-900 font-arabic">{product.name}</h3>
-                  <p className="text-green-700/80 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 font-arabic">
+                  <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 text-green-900 font-arabic line-clamp-1">{product.name}</h3>
+                  <p className="text-xs sm:text-sm text-green-700/80 mb-3 sm:mb-4 line-clamp-2 font-arabic">
                     {product.description}
                   </p>
-                  <div className="flex items-center justify-between mt-auto">
-                    <span className="text-base sm:text-lg font-bold text-green-800">{product.price}</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-base sm:text-lg font-bold text-green-800 font-arabic">{product.price}</span>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => addToCart(product)}
-                      className="p-3 bg-green-800 text-white rounded-xl hover:bg-green-900 transition-colors duration-300"
+                      className="p-2 sm:p-3 bg-green-800 text-white rounded-lg sm:rounded-xl hover:bg-green-700 transition-colors duration-300 shadow-md hover:shadow-lg"
                     >
-                      <ShoppingBag size={18} />
+                      <ShoppingBag size={16} className="sm:w-[18px] sm:h-[18px]" />
                     </motion.button>
                   </div>
                 </div>
@@ -363,35 +376,37 @@ const Products = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 sm:p-6"
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 sm:p-6"
               onClick={() => setQuickViewProduct(null)}
             >
               <motion.div
                 initial={{ scale: 0.9, y: 20 }}
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 20 }}
-                className="bg-white rounded-2xl sm:rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl"
+                className="bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl"
                 onClick={e => e.stopPropagation()}
               >
-                <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
-                  <div className="relative aspect-square">
+                <div className="grid md:grid-cols-2">
+                  <div className="relative aspect-square bg-green-50">
                     <img
                       src={quickViewProduct.image}
                       alt={quickViewProduct.name}
                       className="w-full h-full object-cover"
                     />
-                    <button
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
                       onClick={() => setQuickViewProduct(null)}
-                      className="absolute top-2 sm:top-4 right-2 sm:right-4 p-2 bg-white/90 backdrop-blur-sm rounded-xl text-green-800"
+                      className="absolute top-4 right-4 p-2 bg-white/95 backdrop-blur-sm rounded-xl text-green-800 shadow-lg"
                     >
-                      <X size={18} className="sm:w-5 sm:h-5" />
-                    </button>
+                      <X size={20} />
+                    </motion.button>
                   </div>
-                  <div className="p-4 sm:p-6 md:p-8">
-                    <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-green-900 font-arabic">{quickViewProduct.name}</h2>
-                    <p className="text-green-700/80 mb-4 sm:mb-6 text-sm sm:text-base font-arabic">{quickViewProduct.description}</p>
-                    <div className="flex items-center justify-between mb-6 sm:mb-8">
-                      <span className="text-xl sm:text-2xl font-bold text-green-800">{quickViewProduct.price}</span>
+                  <div className="p-8">
+                    <h2 className="text-2xl font-bold mb-4 text-green-900 font-arabic">{quickViewProduct.name}</h2>
+                    <p className="text-green-700/80 mb-6 text-base font-arabic leading-relaxed">{quickViewProduct.description}</p>
+                    <div className="flex items-center justify-between mb-8">
+                      <span className="text-2xl font-bold text-green-800 font-arabic">{quickViewProduct.price}</span>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -415,7 +430,8 @@ const Products = () => {
                         addToCart(quickViewProduct)
                         setQuickViewProduct(null)
                       }}
-                      className="w-full bg-green-800 text-white py-4 rounded-xl hover:bg-green-900 transition-colors duration-300 flex items-center justify-center gap-2 font-arabic"
+                      className="w-full bg-green-800 text-white py-4 rounded-xl hover:bg-green-700 transition-colors duration-300 
+                               flex items-center justify-center gap-2 font-arabic text-lg font-bold shadow-lg"
                     >
                       <ShoppingBag size={20} />
                       إضافة إلى السلة

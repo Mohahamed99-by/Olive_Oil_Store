@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import Logo from './Logo'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,11 +24,11 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link 
               to="/" 
-              className={`font-bold text-2xl transition-colors duration-300 ${
+              className={`transition-colors duration-300 ${
                 scrolled ? 'text-green-700' : 'text-white'
               }`}
             >
-              متجر المنتجات الطبيعية
+              <Logo />
             </Link>
           </div>
 

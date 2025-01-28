@@ -5,22 +5,22 @@ const Footer = () => {
     <footer className="bg-gradient-to-b from-green-800 to-green-900 text-white">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
-        <div className="px-4 xs:px-5 sm:px-6 lg:px-8 py-12 xs:py-14 sm:py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 xs:gap-10 sm:gap-12">
+        <div className="px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+          <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Store Info */}
-            <div className="text-center sm:text-right space-y-4">
-              <h3 className="text-xl xs:text-2xl font-bold font-arabic">متجر زيت الزيتون</h3>
-              <p className="text-sm xs:text-base text-white/80 font-arabic">
+            <div className="text-center xs:text-right col-span-1 xs:col-span-2 lg:col-span-1">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 font-arabic">متجر زيت الزيتون</h3>
+              <p className="text-sm sm:text-base text-white/80 mb-4 font-arabic leading-relaxed">
                 نقدم لكم أجود أنواع زيت الزيتون البكر الممتاز من تعاونيات مغربية موثوقة
               </p>
-              <div className="flex justify-center sm:justify-end space-x-4 rtl:space-x-reverse">
+              <div className="flex justify-center xs:justify-end gap-4">
                 {socialLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/80 hover:text-white transition-colors duration-300"
+                    className="text-white/80 hover:text-white transition-colors duration-300 hover:scale-110 transform"
                     aria-label={link.name}
                   >
                     {link.icon}
@@ -30,14 +30,14 @@ const Footer = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="text-center sm:text-right">
-              <h4 className="text-lg xs:text-xl font-semibold mb-4 xs:mb-6 font-arabic">روابط سريعة</h4>
-              <ul className="space-y-3">
+            <div className="text-center xs:text-right">
+              <h4 className="text-lg sm:text-xl font-semibold mb-4 font-arabic">روابط سريعة</h4>
+              <ul className="space-y-2 sm:space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-white/80 hover:text-white text-sm xs:text-base transition-colors duration-300 font-arabic"
+                      className="text-white/80 hover:text-white text-sm sm:text-base transition-colors duration-300 hover:translate-x-1 rtl:hover:-translate-x-1 transform inline-block font-arabic"
                     >
                       {link.name}
                     </Link>
@@ -47,35 +47,39 @@ const Footer = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="text-center sm:text-right">
-              <h4 className="text-lg xs:text-xl font-semibold mb-4 xs:mb-6 font-arabic">تواصل معنا</h4>
-              <ul className="space-y-3">
+            <div className="text-center xs:text-right">
+              <h4 className="text-lg sm:text-xl font-semibold mb-4 font-arabic">تواصل معنا</h4>
+              <ul className="space-y-2 sm:space-y-3">
                 {contactInfo.map((info) => (
-                  <li key={info.label} className="flex items-center justify-center sm:justify-end gap-2">
-                    <span className="text-white/80">{info.icon}</span>
-                    <span className="text-white/80 text-sm xs:text-base font-arabic">{info.value}</span>
+                  <li key={info.label} className="flex items-center justify-center xs:justify-end gap-2 group">
+                    <span className="text-white/60 group-hover:text-white/80 transition-colors duration-300">{info.icon}</span>
+                    <span className="text-white/80 group-hover:text-white text-sm sm:text-base transition-colors duration-300 font-arabic">
+                      {info.value}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Newsletter */}
-            <div className="text-center sm:text-right">
-              <h4 className="text-lg xs:text-xl font-semibold mb-4 xs:mb-6 font-arabic">النشرة البريدية</h4>
-              <p className="text-white/80 text-sm xs:text-base mb-4 font-arabic">
+            <div className="text-center xs:text-right">
+              <h4 className="text-lg sm:text-xl font-semibold mb-4 font-arabic">النشرة البريدية</h4>
+              <p className="text-white/80 text-sm sm:text-base mb-4 font-arabic leading-relaxed">
                 اشترك في نشرتنا البريدية للحصول على آخر العروض والمنتجات الجديدة
               </p>
-              <form className="flex flex-col xs:flex-row gap-2 justify-center sm:justify-end" onSubmit={(e) => e.preventDefault()}>
+              <form className="flex flex-col sm:flex-row gap-2 justify-center xs:justify-end" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="email"
                   placeholder="البريد الإلكتروني"
-                  className="px-4 py-2 rounded-lg bg-white/10 text-white placeholder-white/60 border border-white/20 
-                         focus:outline-none focus:border-white/40 text-sm xs:text-base w-full xs:w-auto font-arabic"
+                  className="w-full sm:w-auto px-4 py-2.5 rounded-lg bg-white/10 text-white placeholder-white/60 border border-white/20 
+                         focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/40
+                         text-sm sm:text-base font-arabic transition-all duration-300"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition-colors duration-300 
-                         text-sm xs:text-base whitespace-nowrap font-arabic"
+                  className="px-6 py-2.5 bg-green-600 hover:bg-green-500 active:bg-green-700 rounded-lg transition-all duration-300 
+                         text-sm sm:text-base whitespace-nowrap font-arabic shadow-md hover:shadow-lg
+                         transform hover:-translate-y-0.5"
                 >
                   اشتراك
                 </button>
@@ -86,15 +90,19 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10">
-          <div className="px-4 xs:px-5 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col xs:flex-row justify-between items-center gap-4 text-center xs:text-right">
-              <p className="text-sm xs:text-base text-white/80 font-arabic">
+          <div className="px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-center sm:text-right">
+              <p className="text-sm sm:text-base text-white/80 font-arabic order-2 sm:order-1">
                 &copy; {new Date().getFullYear()} متجر زيت الزيتون. جميع الحقوق محفوظة
               </p>
-              <div className="flex items-center gap-4 text-sm xs:text-base text-white/80">
-                <Link to="/privacy" className="hover:text-white transition-colors duration-300 font-arabic">سياسة الخصوصية</Link>
+              <div className="flex items-center gap-4 text-sm sm:text-base text-white/80 order-1 sm:order-2">
+                <Link to="/privacy" className="hover:text-white transition-colors duration-300 font-arabic">
+                  سياسة الخصوصية
+                </Link>
                 <span className="text-white/40">|</span>
-                <Link to="/terms" className="hover:text-white transition-colors duration-300 font-arabic">شروط الاستخدام</Link>
+                <Link to="/terms" className="hover:text-white transition-colors duration-300 font-arabic">
+                  شروط الاستخدام
+                </Link>
               </div>
             </div>
           </div>
